@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="XujianTest:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="XujianTest.war">
+      <element id="artifact" artifact-name="XujianTest:war exploded" />
+    </root>
+  </artifact>
+</component>
