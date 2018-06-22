@@ -1,6 +1,5 @@
 package com.test;
 
-import org.junit.Test;
 
 /**
  * 项目名称: XujianTest
