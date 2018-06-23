@@ -5,6 +5,7 @@ import com.test.adapterMode.Adapter1;
 import com.test.adapterMode.Adapter2;
 import com.test.adapterMode.Usber;
 import com.test.prototypeMode.Prototype;
+import com.test.proxyMode.*;
 import com.test.templateMode.Shuizhuroupian;
 import com.test.templateMode.Yuxiangrousi;
 import org.junit.Test;
@@ -50,5 +51,21 @@ public class MyTest {
         adapter1.isPs2();
         Adapter2 adapter2 = new Adapter2(new Usber());
         adapter2.isPs2();
+    }
+
+    @Test
+    public void testProxy() {
+        System.out.println("****************静态代理模式************************");
+        UserDao userDao = new UserDao();
+        StaticProxy staticProxy = new StaticProxy(userDao);
+        staticProxy.save();
+        System.out.println("****************jdk动态代理模式************************");
+        //代理对象必须以接口形式返回
+        IuserDao proxyInstance= (IuserDao) new JdkDynamicProxy(userDao).getProxyInstance();
+        proxyInstance.save();
+        System.out.println("****************Cglib代理模式************************");
+        UserTarget userTarget = new UserTarget();
+        UserTarget  proxy= (UserTarget) new CglibProxy(userTarget).getProxyInstance();
+        proxy.save();
     }
 }

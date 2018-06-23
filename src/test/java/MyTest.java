@@ -1,5 +1,7 @@
 import com.test.factoryMode.ExecutorFactory;
 import com.test.factoryMode.TargetExecutor;
+import com.test.templateMode.Shuizhuroupian;
+import com.test.templateMode.Yuxiangrousi;
 import org.junit.Test;
 
 /**
@@ -19,5 +21,14 @@ public class MyTest {
         executorA.process();
         executorB.process();
         executorOther.process();
+    }
+
+    @Test
+    public void cook() {
+        Shuizhuroupian shuizhuroupian = new Shuizhuroupian();
+        shuizhuroupian.cookTempalte();
+        Yuxiangrousi yuxiangrousi = new Yuxiangrousi();
+        yuxiangrousi.cookTempalte();
+
     }
 }
