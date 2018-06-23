@@ -1,6 +1,9 @@
 package myTest.test;
 
 import com.test.BuilderMode.Student;
+import com.test.adapterMode.Adapter1;
+import com.test.adapterMode.Adapter2;
+import com.test.adapterMode.Usber;
 import com.test.prototypeMode.Prototype;
 import com.test.templateMode.Shuizhuroupian;
 import com.test.templateMode.Yuxiangrousi;
@@ -39,5 +42,13 @@ public class MyTest {
     public void testPrototype() {
         Prototype prototype = new Prototype("原型模式");
         Prototype clone = (Prototype)prototype.clone();
+    }
+
+    @Test
+    public void testAdapter() {
+        Adapter1 adapter1 = new Adapter1();
+        adapter1.isPs2();
+        Adapter2 adapter2 = new Adapter2(new Usber());
+        adapter2.isPs2();
     }
 }
