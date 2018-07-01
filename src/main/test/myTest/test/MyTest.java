@@ -1,5 +1,9 @@
 package myTest.test;
 
+import com.test.BridgeMode.Circle;
+import com.test.BridgeMode.GreenCircle;
+import com.test.BridgeMode.RedCircle;
+import com.test.BridgeMode.Shape;
 import com.test.BuilderMode.Student;
 import com.test.adapterMode.Adapter1;
 import com.test.adapterMode.Adapter2;
@@ -67,5 +71,14 @@ public class MyTest {
         UserTarget userTarget = new UserTarget();
         UserTarget  proxy= (UserTarget) new CglibProxy(userTarget).getProxyInstance();
         proxy.save();
+    }
+
+    @Test
+    public void testBridgeMode(){
+        System.out.println("**********************桥接模式********************************");
+        Circle red = new Circle(10, 0, 0, new RedCircle());
+        Circle green = new Circle(20, 0, 0, new GreenCircle());
+        red.draw();
+        green.draw();
     }
 }
